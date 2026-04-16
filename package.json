@@ -7,14 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "prepare": "husky"
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "dependencies": {
     "axios": "^1.13.6",
@@ -23,14 +21,12 @@
     "vue-router": "^5.0.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.6.1",
+    "@biomejs/biome": "^1.9.4",
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
     "@types/node": "^25.3.3",
     "@vitejs/plugin-vue": "^6.0.2",
     "@vue/tsconfig": "^0.9.0",
-    "eslint": "^10.0.2",
-    "eslint-plugin-format": "^2.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.3.1",
     "sass": "^1.97.3",
@@ -39,8 +35,6 @@
     "vite": "^7.3.1"
   },
   "lint-staged": {
-    "*": [
-      "eslint --fix"
-    ]
+    "*": ["biome check --write ."]
   }
 }
