@@ -1,4 +1,4 @@
-# my-pro
+# vue3-ts-template
 
 ## 项目初始化说明
 
@@ -15,7 +15,7 @@
 ## 项目结构
 
 ```text
-my-pro/
+vue3-ts-template/
 ├── .husky/            # Git 钩子配置
 ├── .trae/             # 项目规则配置
 ├── .vscode/           # VS Code 配置
@@ -34,11 +34,10 @@ my-pro/
 │   ├── views/         # 页面视图
 │   ├── App.vue        # 根组件
 │   ├── main.ts        # 入口文件
-│   └── style.css      # 全局样式
+│   └── styles/index.scss # 全局样式
 ├── .gitignore
-├── README.md
+├── biome.json        # Biome 配置
 ├── env.d.ts           # TypeScript 类型声明
-├── eslint.config.js   # ESLint 配置
 ├── index.html
 ├── package.json
 ├── pnpm-lock.yaml
@@ -57,8 +56,8 @@ my-pro/
 - **HTTP 客户端**：Axios
 - **路由**：Vue Router
 - **样式**：SCSS
-- **代码规范**：ESLint (@antfu/eslint-config)
-- **提交规范**：Commitlint + Husky
+- **代码规范**：Biome
+- **提交规范**：Husky
 
 ## 核心功能
 
@@ -66,34 +65,39 @@ my-pro/
 2. **状态管理**：使用 Pinia 进行状态管理
 3. **路由管理**：使用 Vue Router 进行路由管理
 4. **API 调用**：使用 Axios 进行 HTTP 请求
-5. **代码规范**：使用 ESLint 确保代码质量
-6. **提交规范**：使用 Commitlint + Husky 确保提交消息符合规范
+5. **代码规范**：使用 Biome 确保代码质量
+6. **提交规范**：使用 Husky 确保提交消息符合规范
 7. **类型安全**：使用 TypeScript 确保代码类型安全
 
 ## 常用命令
 
-| 命令            | 描述                       |
-| --------------- | -------------------------- |
-| `pnpm dev`      | 启动开发服务器             |
-| `pnpm build`    | 构建生产版本               |
-| `pnpm preview`  | 预览生产构建               |
-| `pnpm lint`     | 运行 ESLint 检查           |
-| `pnpm lint:fix` | 运行 ESLint 检查并自动修复 |
-| `pnpm prepare`  | 初始化 Husky 钩子          |
+| 命令              | 描述                       |
+| ----------------- | -------------------------- |
+| `pnpm dev`        | 启动开发服务器             |
+| `pnpm build`      | 构建生产版本               |
+| `pnpm preview`   | 预览生产构建               |
+| `pnpm lint`       | 运行 Biome 检查            |
+| `pnpm lint:fix`   | 运行 Biome 检查并自动修复   |
+| `pnpm format`     | 运行 Biome 格式化          |
+| `pnpm prepare`    | 初始化 Husky 钩子           |
 | `npx tsc --noEmit` | 运行 TypeScript 类型检查 |
 
 ## 代码规范
 
-项目使用 @antfu/eslint-config 配置，包含以下规则：
+项目使用 Biome 配置，包含以下规则：
 
-- Vue 相关规则
-- TypeScript 相关规则
-- 代码风格规则
-- JSONC、YAML、Markdown 文件规则
+- 2 空格缩进
+- 单引号
+- 分号必需
+- Vue 组件块顺序：template → script → style
+
+### 验证顺序
+
+提交前请运行：`pnpm lint:fix` → `npx tsc --noEmit`
 
 ## 提交规范
 
-项目使用 Conventional Commits 规范，通过 Commitlint + Husky 进行校验。
+项目使用 Conventional Commits 规范，通过 Husky 进行校验。
 
 ### 提交消息格式
 
