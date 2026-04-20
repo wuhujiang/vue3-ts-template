@@ -1,9 +1,9 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "biomejs.biome",
-  "prettier.enable": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "prettier.enable": false,
   "[vue]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
@@ -12,15 +12,16 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[css]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[scss]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
   "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit",
     "source.fixAll.biome": "explicit"
   },
   "biome.lintFile": true,

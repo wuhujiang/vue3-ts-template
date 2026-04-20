@@ -1,19 +1,17 @@
 <template>
-  <div class="app">
-    <header>
-      <h1>My App</h1>
-    </header>
-    <main>
-      <router-view />
-    </main>
-  </div>
+	<div class="app">
+		<header>
+			<h1>My App</h1>
+		</header>
+		<main><router-view /></main>
+	</div>
 </template>
 
 <script setup lang="ts">
 // App component logic here
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .app {
   max-width: 1200px;
   margin: 0 auto;

@@ -1,23 +1,17 @@
 <template>
-  <div class="home">
-    <h1>Home Page</h1>
-    <p>Welcome to the home page!</p>
-    <div class="counter">
-      <h2>Counter: {{ counter.count }}</h2>
-      <h3>Double Count: {{ counter.doubleCount }}</h3>
-      <button @click="counter.increment">
-        Increment
-      </button>
-      <button @click="counter.decrement">
-        Decrement
-      </button>
-    </div>
-    <!-- 使用自动注册的组件 -->
-    <TestComponent />
-    <router-link to="/about">
-      Go to About
-    </router-link>
-  </div>
+	<div class="home">
+		<h1>Home Page</h1>
+		<p>Welcome to the home page!</p>
+		<div class="counter">
+			<h2>Counter: {{ counter.count }}</h2>
+			<h3>Double Count: {{ counter.doubleCount }}</h3>
+			<button type="button" @click="counter.increment">Increment</button>
+			<button type="button" @click="counter.decrement">Decrement</button>
+		</div>
+		<!-- 使用自动注册的组件 -->
+		<TestComponent />
+		<router-link to="/about">Go to About</router-link>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -29,6 +23,7 @@ const counter = useCounterStore();
 <style scoped lang="scss">
 .home {
   padding: 20px;
+
   h1 {
     color: $jw-primary-color;
   }

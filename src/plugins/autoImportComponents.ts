@@ -1,12 +1,9 @@
 import type { App, Component } from 'vue';
 
 export default function autoRegisterComponents(app: App) {
-  const components = import.meta.glob<{ default: Component }>(
-    '../components/**/index.vue',
-    {
-      eager: true,
-    },
-  );
+  const components = import.meta.glob<{ default: Component }>('../components/**/index.vue', {
+    eager: true,
+  });
   for (const path in components) {
     try {
       const component = components[path].default;

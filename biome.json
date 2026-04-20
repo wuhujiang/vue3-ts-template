@@ -1,24 +1,14 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.12/schema.json",
   "vcs": {
     "clientKind": "git",
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": [
-      "node_modules",
-      "dist",
-      "*.md",
-      "tsconfig*.json",
-      ".vscode",
-      ".env*"
-    ]
+    "includes": ["**", "!**/node_modules", "!**/dist", "!**/*.md", "!**/tsconfig*.json", "!**/.vscode", "!**/.env*"]
   },
   "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 80
+    "enabled": false
   },
   "linter": {
     "enabled": true,
@@ -28,6 +18,14 @@
         "noConsole": "off",
         "noExplicitAny": "off"
       }
+    }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": false,
+      "whitespaceSensitivity": "ignore"
     }
   },
   "javascript": {
@@ -40,6 +38,13 @@
   "json": {
     "formatter": {
       "trailingCommas": "none"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
     }
   }
 }
